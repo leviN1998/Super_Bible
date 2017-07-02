@@ -1,0 +1,85 @@
+<component name="libraryTable">
+  <library name="lwjgl-assimp-javadoc">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-assimp.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-bgfx.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-egl.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-glfw.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-jawt.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-jemalloc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-lmdb.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nanovg.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nfd.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nuklear.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-openal.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opencl.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opengl.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opengles.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-openvr.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-ovr.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-par.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-sse.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-stb.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-tinyexr.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-tinyfd.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-vulkan.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-xxhash.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-yoga.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-assimp-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-bgfx-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-egl-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-glfw-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-jawt-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-jemalloc-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-lmdb-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nanovg-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nfd-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nuklear-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-openal-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opencl-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opengl-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opengles-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-openvr-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-ovr-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-par-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-sse-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-stb-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-tinyexr-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-tinyfd-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-vulkan-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-xxhash-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-yoga-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-assimp-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-bgfx-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-egl-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-glfw-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-jawt-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-jemalloc-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-lmdb-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nanovg-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nfd-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-nuklear-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-openal-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opencl-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opengl-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-opengles-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-openvr-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-ovr-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-par-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-sse-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-stb-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-tinyexr-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-tinyfd-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-vulkan-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-xxhash-sources.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive/programmier stuff/lwjgl 3.1.2/lwjgl-yoga-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
