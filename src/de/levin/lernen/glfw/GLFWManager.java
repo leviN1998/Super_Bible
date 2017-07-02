@@ -5,6 +5,7 @@ import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL;
+import org.lwjgl.opengl.GL11;
 import org.lwjgl.system.MemoryStack;
 
 import java.nio.IntBuffer;
@@ -12,6 +13,7 @@ import java.nio.IntBuffer;
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL13.*;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 /**
@@ -20,6 +22,8 @@ import static org.lwjgl.system.MemoryUtil.*;
 public class GLFWManager {
 
     public static long window;
+    public static int w;
+    public static int h;
 
     public static void init(int width, int height){
         System.out.println("LWJGL Version: " + Version.getVersion());
@@ -63,6 +67,7 @@ public class GLFWManager {
         glfwMakeContextCurrent(window);
         // Enable v-sync
         glfwSwapInterval(1);
+
 
         // Make the window visible
         glfwShowWindow(window);

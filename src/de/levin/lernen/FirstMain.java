@@ -4,6 +4,7 @@ package de.levin.lernen;
 import de.levin.lernen.glfw.GLFWManager;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL30;
 
 /**
  * Created by levin on 01.07.2017.

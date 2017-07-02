@@ -2,11 +2,15 @@ package de.levin.lernen.kapitel1;
 
 import de.levin.lernen.kapitel1.shader.ShaderUtils;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL45;
 import org.lwjgl.system.CallbackI;
+import sun.invoke.util.VerifyAccess;
 import toolbox.math.Vector4f;
 
+import static org.lwjgl.opengl.GL13.GL_TEXTURE1;
+import static org.lwjgl.opengl.GL13.glActiveTexture;
 import static org.lwjgl.opengl.GL30.*;
-import static org.lwjgl.opengl.GL45.*;
+import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL20.*;
 
 
@@ -25,23 +29,27 @@ public class FirstShader extends AbstractMain{
     @Override
     protected void init() {
         shaderProgram = ShaderUtils.createProgram("res/kapitel1/first.vert", "res/kapitel1/first.frag");
-        vao = glCreateVertexArrays();
+        vao = GL45.glCreateVertexArrays();
         glBindVertexArray(vao);
         color = new Vector4f(0.1f, 0, 0, 1);
     }
 
     @Override
     protected void update() {
-        color.y = (float) Math.sin(System.currentTimeMillis()/100d);
-        color.z = (float) Math.cos(System.currentTimeMillis()/100d);
+        color.y = (float) Math.sin(System.currentTimeMillis()/1000d);
+        color.z = (float) Math.cos(System.currentTimeMillis()/1000d);
     }
 
     @Override
     protected void render() {
-
         GL11.glClearColor(color.x,color.y,color.z,color.w);
 
+        glBindVertexArray(vao);
+        glUseProgram(shaderProgram);
 
+        glPointSize(40.0f);
+
+        glDrawArrays(GL_TRIANGLES, 0, 3);
     }
 
 
