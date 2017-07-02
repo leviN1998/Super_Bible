@@ -1,0 +1,25 @@
+#version 450 core
+
+//Zeigt an wie viele Punkte ein Patch hat
+layout (vertices = 3) out;
+
+
+void main (void){
+
+
+    if(gl_InvocationID == 0){
+        //Setzt die Anzahl der inneren Punkte
+        gl_TessLevelInner[0] = 5.0;
+
+        //Punkte auf Seite 0
+        gl_TessLevelOuter[0] = 5.0;
+
+        //etc.
+        gl_TessLevelOuter[1] = 5.0;
+        gl_TessLevelOuter[2] = 5.0;
+    }
+
+    //Gbt die Position weiter
+    gl_out[gl_InvocationID].gl_Position =
+        gl_in[gl_InvocationID].gl_Position;
+}
