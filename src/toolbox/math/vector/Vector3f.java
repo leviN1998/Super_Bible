@@ -3,13 +3,14 @@ package toolbox.math.vector;
 /**
  * Created by Levin on 17.08.2017.
  */
-public class Vector3f {
+public class Vector3f extends Vector{
 
     public float x;
     public float y;
     public float z;
 
     public Vector3f(float x, float y, float z){
+        super(3);
         this.x = x;
         this.y = y;
         this.z = z;
@@ -57,4 +58,6 @@ public class Vector3f {
         out[2] = getZ();
         return out;
     }
+
+
 }

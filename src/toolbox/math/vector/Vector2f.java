@@ -3,12 +3,13 @@ package toolbox.math.vector;
 /**
  * Created by Levin on 17.08.2017.
  */
-public class Vector2f {
+public class Vector2f extends Vector{
 
     public float x;
     public float y;
 
     public Vector2f(float x, float y){
+        super(2);
         this.x = x;
         this.y = y;
     }
@@ -44,5 +45,4 @@ public class Vector2f {
         out[1] = getY();
         return out;
     }
-
 }
