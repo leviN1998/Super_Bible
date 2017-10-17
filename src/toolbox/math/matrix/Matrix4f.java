@@ -1,8 +1,10 @@
 package toolbox.math.matrix;
 
+import toolbox.math.BufferTools;
 import toolbox.math.Vector4f;
-import toolbox.math.vector.Vector;
+import toolbox.math.vector.Vector3f;
 
+import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,11 +26,142 @@ public class Matrix4f{
         }
     }
 
+
+    /**
+     * Method which creates an identity matrix
+     * @return
+     * the matrix
+     */
     public static Matrix4f identity(){
-        //TODO: !!!!!!
-        return null;
+        Vector4f a = new Vector4f(1.0f, 0, 0, 0);
+        Vector4f b = new Vector4f(0, 1.0f, 0, 0);
+        Vector4f c = new Vector4f(0, 0, 1.0f, 0);
+        Vector4f d = new Vector4f(0, 0, 0, 1.0f);
+        List<Vector4f> rows = new ArrayList<>();
+        rows.add(a);
+        rows.add(b);
+        rows.add(c);
+        rows.add(d);
+        return createWithRows(rows);
     }
 
+
+    /**
+     * Method to create a translation-matrix
+     * @param trans
+     * the wanted translation
+     * @return
+     * the translation-matrix
+     */
+    public static Matrix4f translation(Vector3f trans){
+        Matrix4f out = identity();
+        out.setElement(0, 3, trans.getX());
+        out.setElement(1, 3, trans.getY());
+        out.setElement(2, 3, trans.getZ());
+        return out;
+    }
+
+
+    /**
+     * This Method creates a rotation Matrix with the given rotations
+     * @param rot
+     * Vector3f with the rotation around the x-Axis as x-Value usw.
+     * @return
+     * the rotationMatrix
+     */
+    public static Matrix4f rotation(Vector3f rot){
+        Vector3f rota = new Vector3f((float)Math.toRadians(rot.getX()),
+                (float) Math.toRadians(rot.getY()),(float) Math.toRadians(rot.getZ()));
+        Matrix4f out = identity();
+
+        double cT = Math.cos(rota.getY());
+        double sT = Math.sin(rota.getY());
+
+        double cV = Math.cos(rota.getZ());
+        double sV = Math.sin(rota.getZ());
+
+        double cO = Math.cos(rota.getX());
+        double sO = Math.sin(rota.getX());
+
+        out.setElement(0, 0, cT * cV);
+        out.setElement(0, 1, (cO * sV) + (sO * sT * cV));
+        out.setElement(0, 2, (sO * sV) - (cO * sT * cV));
+
+        out.setElement(1, 0, (-cT) * sV);
+        out.setElement(1, 1, (cO * cV) - (sO * sT * sV));
+        out.setElement(1, 2, (sO * cV) + (cO * sT * sV));
+
+        out.setElement(2, 0, sT);
+        out.setElement(2, 1, (-sO) * cT);
+        out.setElement(2, 2, cO * cT);
+
+        return out;
+    }
+
+
+    /**
+     * this Method creates a scaling Matrix with the given scaling as Vector3f
+     * @param scale
+     * x-Value = scaling in x-direction usw.
+     * @return
+     * scaling matrix
+     */
+    public static Matrix4f scaling(Vector3f scale){
+        Matrix4f out = identity();
+        out.setElement(0, 0, scale.x);
+        out.setElement(1, 1, scale.y);
+        out.setElement(2, 2, scale.z);
+        return out;
+    }
+
+
+    /**
+     * This method returns a transformationMatrix which consists of the 3 transformations multiplied together
+     * @param trans
+     * The translation of the Matrix
+     * @param rot
+     * The rotation part
+     * @param scale
+     * the scaling part
+     * @return
+     * the transformation Matrix
+     */
+    public static Matrix4f transformation(Vector3f trans, Vector3f rot, Vector3f scale){
+        Matrix4f tR = translation(trans).multiply(rotation(rot));
+        return tR.multiply(scaling(scale));
+    }
+
+
+    /**
+     * This method creates a projection Matrix for the given parameters
+     * @param fov
+     * the field of view
+     * @param nearPlane
+     * the point closest to the camera (closer points will be discarded)
+     * @param farPlane
+     * the point most far away from the camera
+     * @param width
+     * width of the screen in pixels
+     * @param height
+     * height of the screen in picels
+     * @return
+     * a projectionMatrix
+     */
+    public static Matrix4f projection(float fov, float nearPlane, float farPlane, int width, int height){
+        float aspectRatio = (float) width / (float) height;
+        float y_scale = (float) ((1f / Math.tan(Math.toRadians(fov / 2f))) * aspectRatio);
+        float x_scale = y_scale / aspectRatio;
+        float frustrumLength = farPlane - nearPlane;
+
+        Matrix4f m = new Matrix4f();
+        m.setElement(0, 0, x_scale);
+        m.setElement(1, 1, y_scale);
+        m.setElement(2, 2, -((farPlane + nearPlane) / frustrumLength));
+        m.setElement(2, 3, -1);
+        m.setElement(3, 2, -((2f * nearPlane * farPlane) / frustrumLength));
+        m.setElement(3, 3, 0);
+        return m;
+    }
 
     /**
      * This Method creates a Matrix with your given rows
@@ -105,6 +238,10 @@ public class Matrix4f{
      */
     public void setElement(int row, int column, float element){
         elements[row * 4 + column] = element;
+    }
+    //The same Method just with a double which casts it to a float inside
+    public void setElement(int row, int column, double element){
+        setElement(row, column, (float) element);
     }
 
 
@@ -219,6 +356,36 @@ public class Matrix4f{
         out.setElements(e);
         return out;
     }
+
+
+    /**
+     * Simple Method to get the matrixes content as floatBuffer (needed to lod up to any shader)
+     * The order is important!!!!
+     * @return
+     * returns a float buffer holding the matrixes content
+     */
+    public FloatBuffer toFloatBuffer(){
+        float[] e = new float[16];
+        List<Float> eL = new ArrayList<>();
+
+        for (int i = 0;i<4;i++){
+            Vector4f v = getColumn(i);
+            eL.add(v.getX());
+            eL.add(v.getY());
+            eL.add(v.getZ());
+            eL.add(v.getW());
+        }
+
+        for (int i = 0;i<eL.size();i++){
+            e[i] = eL.get(i);
+        }
+
+        return BufferTools.createFloatBuffer(e);
+    }
+
+
+
+
 
 
 

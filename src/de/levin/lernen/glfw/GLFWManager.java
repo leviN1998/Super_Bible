@@ -28,6 +28,9 @@ public class GLFWManager {
     public static void init(int width, int height){
         System.out.println("LWJGL Version: " + Version.getVersion());
 
+        w = width;
+        h = height;
+
         GLFWErrorCallback.createPrint(System.err).set();
 
         if(!glfwInit())

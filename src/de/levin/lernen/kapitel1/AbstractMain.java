@@ -13,6 +13,10 @@ import static org.lwjgl.opengl.GL11.glGetString;
  */
 public abstract class AbstractMain implements Runnable{
 
+    public static float FOV = 70;
+    public static float NEAR_PLANE = 0.1f;
+    public static float FAR_PLANE = 1000f;
+
     @Override
     public void run() {
         GLFWManager.init(1280, 720);

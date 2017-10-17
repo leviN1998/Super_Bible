@@ -51,6 +51,7 @@ public class ShaderUtils {
         return program;
     }
 
+
     public static int createShader(String source, int type, String debugName){
         int id = glCreateShader(type);
         glShaderSource(id, source);

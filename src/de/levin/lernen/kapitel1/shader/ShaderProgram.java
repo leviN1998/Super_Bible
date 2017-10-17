@@ -4,6 +4,9 @@ import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL32;
 import org.lwjgl.opengl.GL40;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.lwjgl.opengl.GL20.*;
 
 /**
@@ -16,6 +19,8 @@ public class ShaderProgram {
     private boolean hasControl;
     private boolean hasEvaluation;
     private boolean hasGeometry;
+
+    private Map<String, Integer> uniforms;
 
     public ShaderProgram(String vertexPath, String controlPath, String evaluationPath, String geometryPath, String fragmentPath){
         String vertSource = ShaderUtils.loadAsString(vertexPath);
@@ -51,6 +56,8 @@ public class ShaderProgram {
 
         initProgram(vert,tcs,tes,geo,frag );
         enabled = false;
+
+        uniforms = new HashMap<>();
     }
 
     public static ShaderProgram basic(String vertexPath, String  fragmentpath){
@@ -73,6 +80,22 @@ public class ShaderProgram {
         if (hasEvaluation) GL20.glDeleteShader(tes);
         if (hasGeometry) GL20.glDeleteShader(geo);
         GL20.glDeleteShader(frag);
+    }
+
+    private void createuniform(String uniformName){
+        int uniformLocation = glGetUniformLocation(programID, uniformName);
+        if (uniformLocation < 0) {
+            System.err.println("konnte Uniform nicht finden: " + uniformName);
+            System.exit(-1);
+        }
+        uniforms.put(uniformName, uniformLocation);
+    }
+
+    public int getUniformLocation(String uniformName){
+        if (!uniforms.containsKey(uniformName)){
+            createuniform(uniformName);
+        }
+        return uniforms.get(uniformName);
     }
 
     public void enable(){
